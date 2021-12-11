@@ -1,0 +1,52 @@
+///
+/// @file    Config.h:
+/// @version 1.0.0.0
+/// @brief   定义了项目基本的宏定义
+///          @PROJECT_NAME@ @PROJECT_VERSION@
+///          @PROJECT_DESCRIPTION@
+#pragma once
+
+// ---------------
+//   unify packing
+// ---------------
+#define _DERAIN_PACKING 8
+#define _DERAIN_PACK_PUSH __pragma(pack(push, _DERAIN_PACKING))
+#define _DERAIN_PACK_POP  __pragma(pack(pop))
+
+
+// ---------------
+//   project root namespace definition
+// ---------------
+#define _DERAIN_NAMESPACE_BEGIN \
+	namespace Derain {
+
+#define _DERAIN_NAMESPACE_END   \
+	}
+
+
+// ---------------
+//   system config
+// ---------------
+#ifdef _WINDOWS
+#    ifdef _DERAIN_FRAMEWORK_EXPORTS
+#        define _DERAIN_FRAMEWORK_API __declspec(dllexport)
+#    else
+#        define _DERAIN_FRAMEWORK_API __declspec(dllimport)
+#    endif
+#endif
+
+#ifdef _LINUX
+#    ifdef _DERAIN_FRAMEWORK_EXPORTS
+#        define _DERAIN_FRAMEWORK_API __attribute__((visibility ("default")))
+#    else
+#        define _DERAIN_FRAMEWORK_API
+#    endif
+#endif
+
+
+// ---------------
+//   debug macro
+// ---------------
+#ifdef _DEBUG
+#    define @usr_project_debug_macro_symbol@
+#endif

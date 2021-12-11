@@ -1,0 +1,38 @@
+
+D:\Develop\elan\scripts>cd /d "D:\Develop\elan\scripts\" 
+
+D:\Develop\elan\scripts>set project_path=D:\Develop\elan\scripts\..\projects 
+
+D:\Develop\elan\scripts>rem remove cache [.vs] 
+
+D:\Develop\elan\scripts>for /F %p in ('dir "D:\Develop\elan\scripts\..\projects" /b /ad') do call:remove_cache D:\Develop\elan\scripts\..\projects\%p 
+
+D:\Develop\elan\scripts>call:remove_cache D:\Develop\elan\scripts\..\projects\derain.kernel 
+
+D:\Develop\elan\scripts>set remove_cache_path=D:\Develop\elan\scripts\..\projects\derain.kernel 
+
+D:\Develop\elan\scripts>set cache_path= 
+
+D:\Develop\elan\scripts>set cache_path= "D:\Develop\elan\scripts\..\projects\derain.kernel\.vs" 
+
+D:\Develop\elan\scripts>set cache_path= "D:\Develop\elan\scripts\..\projects\derain.kernel\.vs" "D:\Develop\elan\scripts\..\projects\derain.kernel\out" 
+
+D:\Develop\elan\scripts>rd /s /q  "D:\Develop\elan\scripts\..\projects\derain.kernel\.vs" "D:\Develop\elan\scripts\..\projects\derain.kernel\out" 
+
+D:\Develop\elan\scripts>goto:eof
+
+D:\Develop\elan\scripts>call:remove_cache D:\Develop\elan\scripts\..\projects\template 
+
+D:\Develop\elan\scripts>set remove_cache_path=D:\Develop\elan\scripts\..\projects\template 
+
+D:\Develop\elan\scripts>set cache_path= 
+
+D:\Develop\elan\scripts>set cache_path= "D:\Develop\elan\scripts\..\projects\template\.vs" 
+
+D:\Develop\elan\scripts>set cache_path= "D:\Develop\elan\scripts\..\projects\template\.vs" "D:\Develop\elan\scripts\..\projects\template\out" 
+
+D:\Develop\elan\scripts>rd /s /q  "D:\Develop\elan\scripts\..\projects\template\.vs" "D:\Develop\elan\scripts\..\projects\template\out" 
+
+D:\Develop\elan\scripts>goto:eof
+
+D:\Develop\elan\scripts>goto:eof
